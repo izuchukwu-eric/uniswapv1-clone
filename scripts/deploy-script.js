@@ -6,11 +6,11 @@ async function main() {
   await token.deployed();
 
   const Exchange = await hre.ethers.getContractFactory("Exchange");
-  const greeter = await Exchange.deploy(token.address);
+  const exchange = await Exchange.deploy(token.address);
 
-  await greeter.deployed();
+  await exchange.deployed();
 
-  console.log("Exchange deployed to:", greeter.address);
+  console.log("Exchange deployed to:", exchange.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
