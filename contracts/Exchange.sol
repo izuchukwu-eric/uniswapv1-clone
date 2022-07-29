@@ -46,4 +46,12 @@ contract Exchange {
 
         return getAmount(_ethSold, address(this).balance, tokenReserve);
     }
+
+    function getEthAmount(uint256 _tokenSold) public view returns(uint256) {
+        require(_tokenSold > 0, "tokenSold is too small");
+
+        uint256 tokenReserve = getReserve();
+
+        return getAmount(_tokenSold, tokenReserve, address(this).balance);
+    }
 }
