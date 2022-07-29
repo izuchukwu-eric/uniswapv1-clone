@@ -29,6 +29,6 @@ contract Exchange {
     function getPrice(uint256 inputReserve, uint256 outputReserve) public pure returns (uint256) {
         require(inputReserve > 0 && outputReserve > 0, "Invalid reserves");
 
-        return inputReserve / outputReserve;
+        return (inputReserve * 1000) / outputReserve;
     }
 }
